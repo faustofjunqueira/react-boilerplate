@@ -10,7 +10,7 @@ export interface I18nStore {
   }
 }
 
-export const I18nContext = createContext({});
+export const I18nContext = createContext({}) as any as React.Context<I18nStore>;
 
 export const I18nProvider: React.FC = ({children}) => {
 
