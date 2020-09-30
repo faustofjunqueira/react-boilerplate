@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { AuthenticationProvider } from "./components/auth/AuthenticationProvider";
+import { AuthProvider } from "./components/auth";
 import { I18nProvider } from "./components/i18n/I18nProvider";
 import { RouterApp } from "./Router";
 
@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <I18nProvider>
-        <AuthenticationProvider>
+        <AuthProvider>
           <RouterApp />
-        </AuthenticationProvider>
+        </AuthProvider>
       </I18nProvider>
     </div>
   );
