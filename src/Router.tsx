@@ -7,6 +7,7 @@ import { HomePage } from "./modules/home/views";
 
 // TODO: Create the sidebar routes (create menu extensions)
 // TODO: Nested routes
+// TODO: lazy load of private routes
 
 export const RouterApp = () => (
   <Router>
