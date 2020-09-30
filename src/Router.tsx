@@ -1,11 +1,9 @@
-import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch, 
-    Route
-} from 'react-router-dom'
-import { HomePage } from './modules/home/views';
-import { _404Page } from './modules/errors/views/_404Page';
+import React from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { PrivateRoute } from "./components/auth/PrivateRoute";
+import { PublicRoute } from "./components/auth/PublicRoute";
+import { Page404 } from "./modules/errors/views/Page404";
+import { HomePage } from "./modules/home/views";
 
 // TODO: Create the sidebar routes (create menu extensions)
 // TODO: Create the public routes
@@ -13,14 +11,15 @@ import { _404Page } from './modules/errors/views/_404Page';
 // TODO: Nested routes
 
 export const RouterApp = () => (
-    <Router>
-        <Switch>
-            <Route exact path="/">
-                <HomePage />
-            </Route>
-            <Route path="*">
-                <_404Page />
-            </Route>
-        </Switch>
-    </Router>
-)
+  <Router>
+    <Switch>
+      <PublicRoute exact path="/">
+        <HomePage />
+      </PublicRoute>
+      <PrivateRoute path="/junda">Junda</PrivateRoute>
+      <PublicRoute path="*">
+        <Page404 />
+      </PublicRoute>
+    </Switch>
+  </Router>
+);
