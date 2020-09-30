@@ -1,3 +1,4 @@
+import { InitOptions } from "i18next";
 import { KeycloakConfig, KeycloakInitOptions } from "keycloak-js";
 
 export const Environment = {
@@ -15,4 +16,20 @@ export const Environment = {
       pkceMethod: "S256",
     };
   },
+
+  get i18nInitOptions() : InitOptions {
+    return {
+      fallbackLng: "en",
+      debug: false,
+      interpolation: {
+        escapeValue: false,
+      },
+      react: {
+        useSuspense: false,
+      },
+      detection: {
+        order: ['querystring', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      },
+    }
+  }
 };

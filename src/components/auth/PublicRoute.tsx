@@ -5,5 +5,5 @@ export const PublicRoute: React.FunctionComponent<RouteProps> = ({
   children,
   ...rest
 }) => {
-  return <Route {...rest}>{{ children }}</Route>;
+  return <Route {...rest}>{children}</Route>;
 };

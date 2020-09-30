@@ -16,7 +16,7 @@ export const RouterApp = () => (
       <PublicRoute exact path="/">
         <HomePage />
       </PublicRoute>
-      <PrivateRoute path="/junda">Junda</PrivateRoute>
+      <PrivateRoute path="/example">example</PrivateRoute>
       <PublicRoute path="*">
         <Page404 />
       </PublicRoute>
