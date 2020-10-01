@@ -19,12 +19,9 @@ export const AntdConfigProvider: React.FC = ({children}) => {
 
   const lang = t('lang');
   const locale = getLocaleByName(lang);
-  if(!locale) {
-    throw new Error(`Locale not defined in AntD [${lang}]`);
-  }
 
   return (
-    <ConfigProvider locale={locale} {...AntdCfg.configProviderConfig}>
+    <ConfigProvider locale={locale || undefined} {...AntdCfg.configProviderConfig}>
       {children}
     </ConfigProvider>
   );

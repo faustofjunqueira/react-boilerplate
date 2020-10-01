@@ -7,8 +7,8 @@ export const HomePage: React.FunctionComponent = () => {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
+      <p>{moment().format("MMM Do YY")}</p>
       <p>
-        {moment().format("MMM Do YY")}
          Edit <code>src/App.tsx</code> and save to reload.
       </p>
       <a
