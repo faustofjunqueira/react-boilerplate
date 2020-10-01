@@ -6,8 +6,6 @@ import { Page404 } from "./modules/errors/views/Page404";
 import { HomePage } from "./modules/example/views";
 import { PanelPage } from "./modules/panel/views";
 
-// TODO: Create the sidebar routes (create menu extensions)
-// TODO: Nested routes
 // TODO: lazy load of private routes
 
 export const RouterApp = () => (

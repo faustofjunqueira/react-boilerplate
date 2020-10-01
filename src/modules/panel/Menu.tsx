@@ -3,7 +3,7 @@ import React from "react"
 import { Link, useRouteMatch } from "react-router-dom"
 
 export const PanelMenu: React.FC = () => {
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
   return (
     <Menu mode="vertical" theme={"dark"}>
       <Menu.Item>

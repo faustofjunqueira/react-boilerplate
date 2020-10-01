@@ -10,7 +10,7 @@ export const PanelRouter = () => {
   return (
 
     <Switch>
-      <PrivateRoute exact path={path}>Panel Raiz</PrivateRoute>
+      <PrivateRoute exact path={path}>Raiz</PrivateRoute>
       <PrivateRoute exact path={`${path}/:exampleId`}>Subnivel</PrivateRoute>
     </Switch>
   );
