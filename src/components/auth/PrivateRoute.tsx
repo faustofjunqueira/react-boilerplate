@@ -1,5 +1,5 @@
 import { useKeycloak } from '@react-keycloak/web';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 import { AuthLogin } from './AuthLogin';
 
