@@ -8,7 +8,6 @@ export const PanelRouter = () => {
 
   // https://reactrouter.com/web/example/nesting
   return (
-
     <Switch>
       <PrivateRoute exact path={path}>Raiz</PrivateRoute>
       <PrivateRoute exact path={`${path}/:exampleId`}>Subnivel</PrivateRoute>

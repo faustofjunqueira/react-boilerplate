@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { PrivateRoute, PublicRoute } from "./components/auth";
 import { Page403 } from "./modules/errors/views/Page403";
 import { Page404 } from "./modules/errors/views/Page404";
-import { HomePage } from "./modules/example/views";
+import { HomePage } from "./modules/home/views";
 import { PanelPage } from "./modules/panel/views";
 
 // TODO: lazy load of private routes
