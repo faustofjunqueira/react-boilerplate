@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import logo from "../assets/logo.svg";
 import './index.less';
+import { Link } from "react-router-dom";
 
 export const HomePage: React.FunctionComponent = () => {
   return (
@@ -10,6 +11,7 @@ export const HomePage: React.FunctionComponent = () => {
       <p>{moment().format("MMM Do YY")}</p>
       <p>
          Edit <code>src/App.tsx</code> and save to reload.
+         <Link to="/example">Junda</Link>
       </p>
       <a
         className="App-link"

@@ -9,11 +9,11 @@ import "./style/theme.less";
 function App() {
   return (
     <div className="App">
-      <AntdConfigProvider>
-        <AuthProvider>
+      <AuthProvider>
+        <AntdConfigProvider>
           <RouterApp />
-        </AuthProvider>
-      </AntdConfigProvider>
+        </AntdConfigProvider>
+      </AuthProvider>
     </div>
   );
 }

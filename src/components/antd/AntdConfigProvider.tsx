@@ -17,8 +17,7 @@ function getLocaleByName(locname: string): Locale | null {
 export const AntdConfigProvider: React.FC = ({children}) => {
   const {t} = useTranslation();
 
-  const lang = t('lang');
-  const locale = getLocaleByName(lang);
+  const locale = getLocaleByName(t('lang'));
 
   return (
     <ConfigProvider locale={locale || undefined} {...AntdCfg.configProviderConfig}>

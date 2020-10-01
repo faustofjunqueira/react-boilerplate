@@ -19,26 +19,21 @@ export const PrivateRoute: React.FunctionComponent<PrivateRouteProps> = ({childr
   let hasRole = true;
   if(initialized && !!(keycloak.authenticated)) {
     if(role) {
-      console.log("checked")
       hasRole = keycloak.hasResourceRole(role);
     }
 
     if(realmRole) {
-      console.log("checked realm")
       hasRole = keycloak.hasRealmRole(realmRole);
     }
   }
 
-  let mustRender = initialized;
-  mustRender = mustRender && !!(keycloak.authenticated);
-  mustRender = mustRender && hasRole;
-
-  console.log("hasRole", hasRole)
+  let needLogin = initialized && !keycloak.authenticated;
 
   return initialized ? (
     <Route {...rest}>
       {!hasRole && (<Redirect to="/unauthorized" />)}
-      {mustRender ? children : (<AuthLogin />) }
+      {needLogin && <AuthLogin /> }
+      {!needLogin && hasRole && children}
     </Route>
   ) :
   (<></>)

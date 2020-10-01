@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { PrivateRoute, PublicRoute } from "./components/auth";
 import { Page403 } from "./modules/errors/views/Page403";
 import { Page404 } from "./modules/errors/views/Page404";
-import { HomePage } from "./modules/home/views";
+import { HomePage } from "./modules/example/views";
+import { PanelPage } from "./modules/panel/views";
 
 // TODO: Create the sidebar routes (create menu extensions)
 // TODO: Nested routes
@@ -15,7 +16,9 @@ export const RouterApp = () => (
       <PublicRoute exact path="/">
         <HomePage />
       </PublicRoute>
-      <PrivateRoute path="/example" role="examplerole">example</PrivateRoute>
+      <PrivateRoute path="/panel">
+        <PanelPage />
+      </PrivateRoute>
       <PublicRoute path="/unauthorized">
         <Page403 />
       </PublicRoute>
