@@ -1,6 +1,5 @@
 import React, {createContext, useState} from 'react';
 import { i18nServices } from '../../services/i18n';
-
 export interface I18nStore {
   action: {
     changeLang: (lang: string) => void;

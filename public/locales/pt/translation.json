@@ -1,3 +1,6 @@
 {
-  "lang": "pt"
+  "lang": "pt",
+  "moment": {
+    "locale": "pt-br"
+  }
 }
