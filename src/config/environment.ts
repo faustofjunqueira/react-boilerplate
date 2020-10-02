@@ -1,5 +1,5 @@
 import { InitOptions } from "i18next";
-import { KeycloakConfig, KeycloakInitOptions } from "keycloak-js";
+import { KeycloakConfig, KeycloakInitOptions, KeycloakLoginOptions } from "keycloak-js";
 
 export const Environment = {
   get keycloakConfig(): KeycloakConfig {
@@ -14,6 +14,13 @@ export const Environment = {
     return {
       onLoad: "check-sso",
       pkceMethod: "S256",
+    };
+  },
+
+
+  get keycloakLoginConfig(): KeycloakLoginOptions {
+    return {
+      scope: process.env.REACT_APP_KEYCLOAK_SCOPE as string,
     };
   },
 
