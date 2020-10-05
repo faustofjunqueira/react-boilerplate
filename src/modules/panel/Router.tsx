@@ -1,6 +1,8 @@
 import React from "react";
 import { Switch, useRouteMatch } from "react-router-dom";
 import { PrivateRoute } from "../../components/auth";
+import { GraphQlTest } from "./components/graphqltest";
+import { UserInfo } from "./components/userInfo";
 
 export const PanelRouter = () => {
 
@@ -9,8 +11,12 @@ export const PanelRouter = () => {
   // https://reactrouter.com/web/example/nesting
   return (
     <Switch>
-      <PrivateRoute exact path={path}>Raiz</PrivateRoute>
-      <PrivateRoute exact path={`${path}/:exampleId`}>Subnivel</PrivateRoute>
+      <PrivateRoute exact path={path}>
+        <UserInfo />
+      </PrivateRoute>
+      <PrivateRoute exact path={`${path}/graphql`}>
+        <GraphQlTest />
+      </PrivateRoute>
     </Switch>
   );
 }
