@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
+    "@apollo/client": "^3.2.2",
     "@babel/core": "7.9.0",
     "@react-keycloak/web": "^2.1.4",
     "@svgr/webpack": "4.3.3",
@@ -37,6 +38,7 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
+    "graphql": "^15.3.0",
     "html-webpack-plugin": "4.0.0-beta.11",
     "i18next": "^19.7.0",
     "i18next-browser-languagedetector": "^6.0.1",
@@ -61,6 +63,7 @@
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.3",
+    "react-json-pretty": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
@@ -77,9 +80,11 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "concurrently \"npm run up:react\" \"npm run codegen\" ",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "up:react": "node scripts/start.js",
+    "codegen": "apollo client:codegen --target typescript --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -98,6 +103,8 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.5",
+    "apollo": "^2.31.0",
+    "concurrently": "^5.3.0",
     "css-loader": "^4.3.0",
     "less": "^3.12.2",
     "less-loader": "^7.0.1",

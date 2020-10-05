@@ -1,23 +1,19 @@
-import { useKeycloak } from "@react-keycloak/web";
 import { Layout } from "antd";
 import React, { useContext } from "react";
 import { Brand } from "../../../components/brand/Brand";
 import { useTheme } from "../../../hooks/theme";
+import { GraphQlTest } from "../components/graphqltest";
 import { UserDropdown } from "../components/userDropdown/UserDropdown";
 import { PanelMenu } from "../Menu";
 import { PanelContext } from "../PanelProvider";
 import { PanelRouter } from "../Router";
+import JSONPretty from 'react-json-pretty';
 import "./panel.less";
 const { Content, Header, Sider } = Layout;
 
 export const PanelPage: React.FC = () => {
-  const { keycloak, initialized } = useKeycloak();
   const panelStore = useContext(PanelContext);
-  const {theme} = useTheme();
-
-  if (!initialized || !keycloak?.authenticated) {
-    return <></>;
-  }
+  const { theme } = useTheme();
 
   return (
     <Layout className="panel-layout">
@@ -38,7 +34,8 @@ export const PanelPage: React.FC = () => {
           <PanelMenu theme={theme} />
         </Sider>
         <Content className="panel-content">
-          {JSON.stringify(panelStore.data)}
+          <JSONPretty data={panelStore.data} />
+          <p><GraphQlTest /></p>
           <PanelRouter />
         </Content>
       </Layout>
