@@ -1,0 +1,9 @@
+
+POST http://localhost:8180/auth/realms/stix/collect
+Content-Type: application/json
+
+{
+  "client": "admin-stix",
+  "challenge": "1fc275b18c69ee12a7b2638d6f51f1a752349a6e7a0af88b150a8c6017efa819",
+  "collect": "FaustoExtamenteGostosoJUnda"
+}
