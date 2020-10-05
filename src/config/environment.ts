@@ -1,4 +1,4 @@
-import { ApolloClientOptions, InMemoryCache, NormalizedCacheObject } from "@apollo/client";
+import { ApolloLink, createHttpLink } from "@apollo/client";
 import { InitOptions } from "i18next";
 import { KeycloakConfig, KeycloakInitOptions, KeycloakLoginOptions } from "keycloak-js";
 
@@ -41,10 +41,10 @@ export const Environment = {
     }
   },
 
-  get apolloGraphQlCfg (): ApolloClientOptions<NormalizedCacheObject> {
-    return {
-      uri: process.env.REACT_APP_GRAPHQL_BASE_URI,
-      cache: new InMemoryCache()
-    }
+  get graphqlLink(): ApolloLink {
+    return createHttpLink({
+      uri: process.env.REACT_APP_GRAPHQL_BASE_URI
+    })
   }
+
 };

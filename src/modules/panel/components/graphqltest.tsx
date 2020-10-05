@@ -14,6 +14,7 @@ export const GraphQlTest = () => {
       code: "BR",
     },
   });
+
   return (
     <WaitData loading={loading}>
       <JSONPretty data={data} />
