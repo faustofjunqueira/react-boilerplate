@@ -3,8 +3,21 @@
   height: 100vh;
 
   .panel-header {
-    background-color: white;
-    display: flex;
-    justify-content: flex-end;
+    padding: 0;
+    & > div {
+      padding: 0 16px;
+      display: flex;
+
+      .panel-header-left {
+        flex: 1;
+      }
+
+    }
+
+  }
+
+  .panel-content {
+    margin: 24px;
+    position: relative;
   }
 }

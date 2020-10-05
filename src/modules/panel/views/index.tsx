@@ -10,24 +10,32 @@ import "./panel.less";
 const { Content, Header, Sider } = Layout;
 
 export const PanelPage: React.FC = () => {
-  const {keycloak, initialized} = useKeycloak();
+  const { keycloak, initialized } = useKeycloak();
   const panelStore = useContext(PanelContext);
 
-  if(!initialized || !keycloak?.authenticated) {
+  if (!initialized || !keycloak?.authenticated) {
     return <></>;
   }
 
   return (
     <Layout className="panel-layout">
-      <Sider>
-        <Brand />
-        <PanelMenu />
-      </Sider>
+      <Header className="panel-header">
+        <div>
+          <div className="panel-header-left">
+            <Brand />
+          </div>
+          <div className="panel-header-right">
+            {panelStore.data.userInfo && (
+              <UserDropdown userInfo={panelStore.data.userInfo} />
+            )}
+          </div>
+        </div>
+      </Header>
       <Layout>
-        <Header className="panel-header">
-          {panelStore.data.userInfo && <UserDropdown userInfo={panelStore.data.userInfo} />}
-        </Header>
-        <Content>
+        <Sider theme={"light"}>
+          <PanelMenu />
+        </Sider>
+        <Content className="panel-content">
           {JSON.stringify(panelStore.data)}
           <PanelRouter />
         </Content>

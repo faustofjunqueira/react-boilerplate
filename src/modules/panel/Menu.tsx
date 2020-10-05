@@ -5,7 +5,7 @@ import { Link, useRouteMatch } from "react-router-dom"
 export const PanelMenu: React.FC = () => {
   let { path } = useRouteMatch();
   return (
-    <Menu mode="vertical" theme={"dark"}>
+    <Menu mode="vertical" theme={"light"}>
       <Menu.Item>
         <Link to={path}>Raiz</Link>
       </Menu.Item>
