@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { AntdContext } from '../components/antd/AntdConfigProvider';
 
 export const useTheme = () => {

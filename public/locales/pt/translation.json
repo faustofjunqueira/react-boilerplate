@@ -2,5 +2,6 @@
   "lang": "pt",
   "moment": {
     "locale": "pt-br"
-  }
+  },
+  "loading": "Carregando..."
 }

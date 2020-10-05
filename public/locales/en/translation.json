@@ -2,5 +2,6 @@
   "lang": "en",
   "moment": {
     "locale": "en"
-  }
+  },
+  "loading": "Loading..."
 }
