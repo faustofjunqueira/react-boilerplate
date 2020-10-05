@@ -2,6 +2,7 @@ import { useKeycloak } from "@react-keycloak/web";
 import { Layout } from "antd";
 import React, { useContext } from "react";
 import { Brand } from "../../../components/brand/Brand";
+import { useTheme } from "../../../hooks/theme";
 import { UserDropdown } from "../components/userDropdown/UserDropdown";
 import { PanelMenu } from "../Menu";
 import { PanelContext } from "../PanelProvider";
@@ -12,6 +13,7 @@ const { Content, Header, Sider } = Layout;
 export const PanelPage: React.FC = () => {
   const { keycloak, initialized } = useKeycloak();
   const panelStore = useContext(PanelContext);
+  const {theme} = useTheme();
 
   if (!initialized || !keycloak?.authenticated) {
     return <></>;
@@ -32,8 +34,8 @@ export const PanelPage: React.FC = () => {
         </div>
       </Header>
       <Layout>
-        <Sider theme={"light"}>
-          <PanelMenu />
+        <Sider theme={theme}>
+          <PanelMenu theme={theme} />
         </Sider>
         <Content className="panel-content">
           {JSON.stringify(panelStore.data)}
